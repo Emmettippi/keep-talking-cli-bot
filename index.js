@@ -3,6 +3,8 @@ const READLINE = require('readline').createInterface({
     output: process.stdout
 });
 
+const DEFUSE = require('./defuse/defuse');
+
 let exit = false;
 
 let bomb = {
