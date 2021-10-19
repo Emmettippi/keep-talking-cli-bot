@@ -1,51 +1,66 @@
-const READLINE = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+const readline = require('./reader').readline;
 
-const DEFUSE = require('./defuse/defuse');
+const defuse = require('./defuse/defuse');
+const help = require('./help');
+const bomb = require('./bomb');
+bomb.reset(false);
 
 let exit = false;
 
-let bomb = {
-    car: false
-    , frk: false
-    , batteries: 0
-    , parallel: false
-    , serial: {
-        lastDigit: 0
-        , vowel: false
-    }
-};
-
 const exitFn = () => {
     exit = true;
-    READLINE.on('Grazie per aver usato il keep-writing-bot.', () => {
-        READLINE.close();
-    });
+    readline.close();
 }
 
-const inputListener = (input) => {
+const inputListener = async (input) => {
     if (typeof input === 'string') {
         while (input.includes('  ')) {
-            input.replace('  ', ' ');
+            input = input.replace('  ', ' ');
         }
-        const splitted = input.trim().split(' ');
+        const splitted = input.trim().toLowerCase().split(' ');
         switch (splitted[0]) {
+            case '':
+                break;
+            case 'd':
+            case 'de':
+            case 'def':
+            case 'defu':
+            case 'defus':
             case 'defuse':
                 break;
+            case 'b':
+            case 'bo':
+            case 'bom':
             case 'bomb':
+                await bomb.command(...splitted.slice(1));
                 break;
+            case 'h':
+            case 'he':
+            case 'hel':
+            case 'help':
+                help.help(...splitted.slice(1));
+                break;
+            case 'q':
+            case 'qu':
+            case 'qui':
+            case 'quit':
+            case 'd':
+            case 'do':
+            case 'don':
+            case 'done':
+            case 'e':
+            case 'ex':
+            case 'exi':
             case 'exit':
                 exitFn();
                 break;
-            case 'help':
             default:
+                console.log('    ' + splitted[0] + ' non è un comando riconosciuto.');
         }
     }
 
     if (!exit) {
-        READLINE.question('Command: ', (_input) => {
+        readline.question('Command: ', (_input) => {
             inputListener(_input);
         });
     }
