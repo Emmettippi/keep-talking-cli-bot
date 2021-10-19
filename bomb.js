@@ -167,6 +167,8 @@ var Bomb = module.exports = {
                 case 'reset':
                     Bomb.reset();
                     break;
+                default:
+                    console.log('    "' + args[0] + '" non è un comando bomba riconosciuto.');
             }
         } else {
             Bomb.check();

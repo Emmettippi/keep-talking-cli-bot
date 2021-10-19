@@ -55,7 +55,7 @@ const inputListener = async (input) => {
                 exitFn();
                 break;
             default:
-                console.log('    ' + splitted[0] + ' non è un comando riconosciuto.');
+                console.log('    "' + splitted[0] + '" non è un comando riconosciuto.');
         }
     }
 

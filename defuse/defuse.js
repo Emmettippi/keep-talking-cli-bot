@@ -1,7 +1,30 @@
 const helpDefuse = (...args) => {
     if (args && args.length) {
-        switch (args[1]) {
-
+        switch (args[0]) {
+            case 'wires':
+                break;
+            case 'button':
+                break;
+            case 'symbols':
+                break;
+            case 'colors':
+                break;
+            case 'words':
+                break;
+            case 'memory':
+                break;
+            case 'morse':
+                break;
+            case 'complicated':
+                break;
+            case 'sequence':
+                break;
+            case 'maze':
+                break;
+            case 'password':
+                break;
+            default:
+                console.log('    "' + args[0] + '" non è un modulo riconosciuto.');
         }
     } else {
         console.log('defuse è seguito sempre da [modulo] e da [argomenti]. I moduli sono i seguenti:');
@@ -22,18 +45,86 @@ const helpDefuse = (...args) => {
     }
 }
 
-const defuse = {
-    wires: require('./defuse.wires').defuseWires
-    , button: null
-    , symbols: null
-    , colors: null
-    , words: null
-    , memory: null
-    , morse: null
-    , complicated: null
-    , sequence: null
-    , maze: null
-    , password: null
+const defuse = (...args) => {
+    if (args && args.length) {
+        switch (args[0]) {
+            case 'wi':
+            case 'wir':
+            case 'wire':
+            case 'wires':
+                break;
+            case 'b':
+            case 'bu':
+            case 'but':
+            case 'butt':
+            case 'butto':
+            case 'button':
+                break;
+            case 'sy':
+            case 'sym':
+            case 'symb':
+            case 'symbo':
+            case 'symbol':
+            case 'symbols':
+                break;
+            case 'col':
+            case 'colo':
+            case 'color':
+            case 'colors':
+                break;
+            case 'wo':
+            case 'wor':
+            case 'word':
+            case 'words':
+                break;
+            case 'me':
+            case 'mem':
+            case 'memo':
+            case 'memor':
+            case 'memory':
+                break;
+            case 'mo':
+            case 'mor':
+            case 'mors':
+            case 'morse':
+                break;
+            case 'com':
+            case 'comp':
+            case 'compl':
+            case 'compli':
+            case 'complic':
+            case 'complica':
+            case 'complicat':
+            case 'complicate':
+            case 'complicated':
+                break;
+            case 'se':
+            case 'seq':
+            case 'sequ':
+            case 'seque':
+            case 'sequen':
+            case 'sequenc':
+            case 'sequence':
+                break;
+            case 'ma':
+            case 'max':
+            case 'maze':
+                break;
+            case 'p':
+            case 'pa':
+            case 'pas':
+            case 'pass':
+            case 'passw':
+            case 'passwo':
+            case 'passwor':
+            case 'password':
+                break;
+            default:
+                console.log('    "' + args[0] + '" non è un modulo riconosciuto.');
+        }
+    } else {
+        console.log('Inserisci il modulo da disinnescare. Usa "help defuse" per maggiori informazioni.');
+    }
 };
 
 exports.helpDefuse = helpDefuse;

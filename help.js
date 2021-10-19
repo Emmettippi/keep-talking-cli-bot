@@ -19,7 +19,7 @@ const help = (...args) => {
                 console.log('    Digita "help command" per ricevere dei dettagli sul comando.');
                 break;
             default:
-                console.log('Non sono disponibili suggerimenti per il comando "' + args[0] + '".')
+                console.log('    Non sono disponibili suggerimenti per il comando "' + args[0] + '".')
         }
     } else {
         console.log('Lista dei comandi disponibili:');
