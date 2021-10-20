@@ -1,5 +1,6 @@
 const wires = require('./defuse.wires');
 const button = require('./defuse.button');
+const symbols = require('./defuse.symbols');
 
 const helpDefuse = (...args) => {
     if (args && args.length) {
@@ -11,6 +12,7 @@ const helpDefuse = (...args) => {
                 button.helpDefuseButton();
                 break;
             case 'symbols':
+                symbols.helpDefuseSymbols();
                 break;
             case 'colors':
                 break;
@@ -73,6 +75,7 @@ const defuse = async (...args) => {
             case 'symbo':
             case 'symbol':
             case 'symbols':
+                symbols.defuseSymbols(...args.slice(1));
                 break;
             case 'col':
             case 'colo':
