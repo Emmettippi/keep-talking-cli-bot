@@ -76,7 +76,7 @@ const batteriesQuestion = () => {
             }
             const num = parseInt(input, 10);
             if (num || num === 0) {
-                Bomb.bomb.lastDigit = num;
+                Bomb.bomb.batteries = num;
                 resolve();
             } else {
                 await batteriesQuestion();

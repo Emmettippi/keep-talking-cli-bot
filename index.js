@@ -27,7 +27,7 @@ const inputListener = async (input) => {
             case 'defu':
             case 'defus':
             case 'defuse':
-                defuse.defuse(...splitted.slice(1));
+                await defuse.defuse(...splitted.slice(1));
                 break;
             case 'b':
             case 'bo':

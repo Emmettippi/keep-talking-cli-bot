@@ -1,13 +1,14 @@
-const helpDefuseWires = require('./defuse.wires').helpDefuseWires;
-const defuseWires = require('./defuse.wires').defuseWires;
+const wires = require('./defuse.wires');
+const button = require('./defuse.button');
 
 const helpDefuse = (...args) => {
     if (args && args.length) {
         switch (args[0]) {
             case 'wires':
-                helpDefuseWires();
+                wires.helpDefuseWires();
                 break;
             case 'button':
+                button.helpDefuseButton();
                 break;
             case 'symbols':
                 break;
@@ -49,14 +50,14 @@ const helpDefuse = (...args) => {
     }
 }
 
-const defuse = (...args) => {
+const defuse = async (...args) => {
     if (args && args.length) {
         switch (args[0]) {
             case 'wi':
             case 'wir':
             case 'wire':
             case 'wires':
-                defuseWires(...args.slice(1));
+                wires.defuseWires(...args.slice(1));
                 break;
             case 'b':
             case 'bu':
@@ -64,6 +65,7 @@ const defuse = (...args) => {
             case 'butt':
             case 'butto':
             case 'button':
+                await button.defuseButton(...args.slice(1));
                 break;
             case 'sy':
             case 'sym':
