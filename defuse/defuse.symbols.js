@@ -246,8 +246,12 @@ const defuseSymbols = (...args) => {
         }
     }
 
-    console.log('    L\'ordine è: ' + output[0] + ', ' + output[1]
-        + ', ' + output[2] + ', ' + output[3] + '.');
+    if (output && output.length) {
+        console.log('    L\'ordine è: ' + output[0] + ', ' + output[1]
+            + ', ' + output[2] + ', ' + output[3] + '.');
+    } else {
+        console.log('    Nessuna lista corrisponde ai simboli inseriti.');
+    }
 }
 
 exports.helpDefuseSymbols = helpDefuseSymbols;
