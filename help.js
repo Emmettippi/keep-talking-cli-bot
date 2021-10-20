@@ -16,7 +16,7 @@ const help = (...args) => {
                 console.log('    Esci.');
                 break;
             case 'help':
-                console.log('    Digita "help command" per ricevere dei dettagli sul comando.');
+                console.log('    Digita "HELP command" per ricevere dei dettagli sul comando.');
                 break;
             default:
                 console.log('    Non sono disponibili suggerimenti per il comando "' + args[0] + '".')

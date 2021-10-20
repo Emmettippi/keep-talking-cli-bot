@@ -219,7 +219,7 @@ var Bomb = module.exports = {
                     break;
             }
         } else {
-            console.log('bomb è seguito dai seguenti argomenti:');
+            console.log('BOMB è seguito dai seguenti argomenti:');
             console.log('    CHECK');
             console.log('    SET');
             console.log('    RESET');

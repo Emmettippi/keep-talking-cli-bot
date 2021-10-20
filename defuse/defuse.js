@@ -1,7 +1,11 @@
+const helpDefuseWires = require('./defuse.wires').helpDefuseWires;
+const defuseWires = require('./defuse.wires').defuseWires;
+
 const helpDefuse = (...args) => {
     if (args && args.length) {
         switch (args[0]) {
             case 'wires':
+                helpDefuseWires();
                 break;
             case 'button':
                 break;
@@ -27,7 +31,7 @@ const helpDefuse = (...args) => {
                 console.log('    "' + args[0] + '" non è un modulo riconosciuto.');
         }
     } else {
-        console.log('defuse è seguito sempre da [modulo] e da [argomenti]. I moduli sono i seguenti:');
+        console.log('DEFUSE è seguito sempre da [modulo] e da [argomenti]. I moduli sono i seguenti:');
         console.log('    WIRES color1 color2 color3 [color4 [color5 [color6]]]');
         console.log('    BUTTON color text');
         console.log('    SYMBOLS symbol1 symbol2 symbol3 symbol4');
@@ -52,6 +56,7 @@ const defuse = (...args) => {
             case 'wir':
             case 'wire':
             case 'wires':
+                defuseWires(...args.slice(1));
                 break;
             case 'b':
             case 'bu':
@@ -123,7 +128,7 @@ const defuse = (...args) => {
                 console.log('    "' + args[0] + '" non è un modulo riconosciuto.');
         }
     } else {
-        console.log('Inserisci il modulo da disinnescare. Usa "help defuse" per maggiori informazioni.');
+        console.log('Inserisci il modulo da disinnescare. Usa "HELP DEFUSE" per maggiori informazioni.');
     }
 };
 
