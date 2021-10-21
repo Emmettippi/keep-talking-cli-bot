@@ -2,6 +2,7 @@ const wires = require('./defuse.wires');
 const button = require('./defuse.button');
 const symbols = require('./defuse.symbols');
 const simon = require('./defuse.simon');
+const words = require('./defuse.words');
 
 const helpDefuse = (...args) => {
     if (args && args.length) {
@@ -19,6 +20,7 @@ const helpDefuse = (...args) => {
                 simon.helpDefuseSimon();
                 break;
             case 'words':
+                words.helpDefuseWords();
                 break;
             case 'memory':
                 break;
@@ -41,7 +43,7 @@ const helpDefuse = (...args) => {
         console.log('    BUTTON color text');
         console.log('    SYMBOLS symbol1 symbol2 symbol3 symbol4');
         console.log('    COLORS');
-        console.log('    WORDS text');
+        console.log('    WORDS word');
         console.log('    MEMORY');
         console.log('    MORSE');
         console.log('    COMPLICATED');
@@ -89,6 +91,7 @@ const defuse = async (...args) => {
             case 'wor':
             case 'word':
             case 'words':
+                await words.defuseWords(...args.slice(1));
                 break;
             case 'me':
             case 'mem':
