@@ -3,6 +3,7 @@ const button = require('./defuse.button');
 const symbols = require('./defuse.symbols');
 const simon = require('./defuse.simon');
 const words = require('./defuse.words');
+const memory = require('./defuse.memory');
 
 const helpDefuse = (...args) => {
     if (args && args.length) {
@@ -23,6 +24,7 @@ const helpDefuse = (...args) => {
                 words.helpDefuseWords();
                 break;
             case 'memory':
+                memory.helpDefuseMemory();
                 break;
             case 'morse':
                 break;
@@ -98,6 +100,7 @@ const defuse = async (...args) => {
             case 'memo':
             case 'memor':
             case 'memory':
+                await memory.defuseMemory(...args.slice(1));
                 break;
             case 'mo':
             case 'mor':
