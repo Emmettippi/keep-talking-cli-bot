@@ -60,6 +60,8 @@ const colorQuestion = async () => {
                 resolve();
             } else if (splitted.length === 2 && 'strikes'.startsWith(splitted[0])) {
                 setStrikes(splitted[1]);
+                await colorQuestion();
+                resolve();
             } else {
                 const vowel = Bomb.bomb.vowel ? 0 : 1;
                 let colors = '';

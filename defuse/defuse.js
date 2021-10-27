@@ -5,6 +5,7 @@ const simon = require('./defuse.simon');
 const words = require('./defuse.words');
 const memory = require('./defuse.memory');
 const morse = require('./defuse.morse');
+const complicated = require('./defuse.complicated');
 
 const helpDefuse = (...args) => {
     if (args && args.length) {
@@ -31,6 +32,7 @@ const helpDefuse = (...args) => {
                 morse.helpDefuseMorse();
                 break;
             case 'complicated':
+                complicated.helpDefuseComplicated();
                 break;
             case 'sequence':
                 break;
@@ -119,6 +121,7 @@ const defuse = async (...args) => {
             case 'complicat':
             case 'complicate':
             case 'complicated':
+                await complicated.defuseComplicated(...args.slice(1));
                 break;
             case 'se':
             case 'seq':
