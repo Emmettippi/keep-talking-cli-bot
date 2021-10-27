@@ -132,7 +132,7 @@ const defuse = async (...args) => {
             case 'sequence':
                 break;
             case 'ma':
-            case 'max':
+            case 'maz':
             case 'maze':
                 break;
             case 'p':
